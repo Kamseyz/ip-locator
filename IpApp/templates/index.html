@@ -1,0 +1,62 @@
+{% extends 'base/layout.html' %}
+
+<!-- Search Ip  -->
+{% block content %}
+<body class="bg-light">
+    <div class="container mt-5">
+        <h2 class="mb-4 text-center">IP Address Locator</h2>
+        <form method="POST" action="" class="card p-4 shadow-sm">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="ip" class="form-label">Enter IP Address</label>
+                <input type="text" class="form-control" id="search" name="search" placeholder="e.g., 8.8.8.8" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Locate IP</button>
+        </form>
+    </div>
+</body>
+
+
+<!-- Ip Address Output -->
+
+<div class="card-group">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">IP/CITY/REGION</h5>
+      <p class="card-text">Your Ip Address is: {{data.ip}}</p>
+      <p class="card-text">{{data.city}}</p>
+      <p class="card-text">{{data.region}}</p>
+      <p class="card-text">{{data.region_code}}</p>
+      <p class="card-text">{{data.country_code}}</p>
+      <p class="card-text">{{data.country_code_iso3}}</p>
+    </div>
+  </div>
+
+
+  
+<div class="card-group">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">LONGITUDE/LATITUTE/POSTAL</h5>
+      <p class="card-text">Country Longitude is: {{data.longitude}}</p>
+      <p class="card-text">Country latitude is: {{data.latitude}}</p>
+      <p class="card-text">Postal code is: {{data.postal}}</p>
+      <p class="card-text">Is this country is EU? {{data.in_eu}}</p>
+    </div>
+  </div>
+
+
+<div class="card-group">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">ORG/ TIMEZONE/ COUNTRY CALL CODE</h5>
+      <p class="card-text">Name of country is: {{data.country_name}}</p>
+      <p class="card-text">Country capital is {{data.country_capital}}</p>
+      <p class="card-text">Location timezone is: {{data.timezone}}</p>
+      <p class="card-text">ISP org is: {{data.org}}</p>
+      <p class="card-text">Country call code is: {{data.country_calling_code}}</p>
+      <p class="card-text">Currency used is: {{data.currency_name}}</p>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,5 @@
+# YOU WILL NEED DJANGO AND IPAPI FOR THIS PROJECT
+
+django
+ipapi
+
