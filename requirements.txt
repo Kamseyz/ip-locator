@@ -1,6 +1,6 @@
 # YOU WILL NEED DJANGO AND IPAPI FOR THIS PROJECT
 
-python
+
 django
 ipapi
 
